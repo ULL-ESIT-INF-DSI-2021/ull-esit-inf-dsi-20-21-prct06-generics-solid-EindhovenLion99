@@ -1,4 +1,6 @@
 import {Fighter} from "./Fighter";
+import { Marvel } from "./Marvel";
+import { DC } from "./DC";
 
 export class Pokemon extends Fighter {
   constructor(name: string, height: number, att: number,
@@ -6,39 +8,38 @@ export class Pokemon extends Fighter {
                 super(name, height, att, def, hp, type);
   }
 
-  efficiency(P2: Pokemon, damage: number): number {
-    if (this.type === "Fuego") {
-      if (P2.type === "Fuego" || P2.type === "Electrico")
+  efficiency<T extends (DC | Marvel | Pokemon)>(P2: T, damage: number): number {
+    if (this.getType() === "Fuego") {
+      if (P2.getType() === "Fuego" || P2.getType() === "Electrico")
         return damage;
-      if (P2.type === "Agua")
+      if (P2.getType() === "Agua")
         return 0.5 * damage; 
-      if (P2.type === "Hierba")
+      if (P2.getType()=== "Hierba")
         return 2 * damage;
-    } else if (this.type === "Agua") {
-        if (P2.type === "Agua")
+    } else if (this.getType() === "Agua") {
+        if (P2.getType() === "Agua")
           return damage;
-        if (P2.type === "Hierba" || P2.type === "Electrico")
+        if (P2.getType() === "Hierba" || P2.getType() === "Electrico")
           return 0.5 * damage; 
-        if (P2.type === "Fuego")
+        if (P2.getType()=== "Fuego")
           return 2 * damage;
-    } else if (this.type === "Hierba") {
-        if (P2.type === "Hierba" || P2.type === "Electrico")
+    } else if (this.getType() === "Hierba") {
+        if (P2.getType() === "Hierba" || P2.getType() === "Electrico")
           return damage;
-        if (P2.type === "Fuego")
+        if (P2.getType() === "Fuego")
           return 0.5 * damage; 
-        if (P2.type === "Agua")
+        if (P2.getType() === "Agua")
           return 2 * damage;
-    } else if (this.type === "Electrico") {
-        if (P2.type === "Electrcio" || P2.type === "Hierba" || P2.type === "Fuego")
+    } else if (this.getType() === "Electrico") {
+        if (P2.getType() === "Electrcio" || P2.getType() === "Hierba" || P2.getType() === "Fuego")
           return damage;
-        if (P2.type === "Agua")
+        if (P2.getType() === "Agua")
           return 2 * damage;
     }
-    return 0;
+    return damage * 0.5;
   }
 
-  print(): void {
-    console.log("El Pokemon " + this.getName() + 
-    " ataca con " + this.getAtt() + " de daño"); 
+  print(): string {
+    return "El Pokemon " + this.getName() + " ha vencido"; 
   }
 }
