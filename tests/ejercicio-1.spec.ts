@@ -4,7 +4,8 @@ import {DC} from "../src/Ejercicio_1/DC";
 import {Marvel} from "../src/Ejercicio_1/Marvel";
 import {Pokemon} from "../src/Ejercicio_1/Pokemon";
 import {Combat} from "../src/Ejercicio_1/Combate";
-import { expect } from 'chai';
+import {Pokedex} from "../src/Ejercicio_1/Pokedex";
+import {expect} from 'chai';
 
 let DC1: DC      = new DC     ("BATMAN", 1.9, 90, 110, 100, "DC");
 let AV1: Marvel  = new Marvel ("IRONMAN", 1.8, 110, 150, 200, "Avenger");
@@ -111,6 +112,8 @@ describe('Tipo de Objetos', () => {
   let Pelea1: Combat = new Combat(DC1, AV1);
   let Pelea2: Combat = new Combat(AV1, PO1);
   let Pelea3: Combat = new Combat(AV1, DC1);
+  let Pokedex1: Pokedex = new Pokedex([DC1, AV1, PO1]);
+
   it("BATMAN vs IRONMAN", () => {
     expect(Pelea1.fight()).to.eql("El Vengador IRONMAN ha vencido");
   });
@@ -122,4 +125,9 @@ describe('Tipo de Objetos', () => {
   it("IRONMAN vs BATMAN", () => {
     expect(Pelea3.fight()).to.eql("El Vengador IRONMAN ha vencido");
   });
+
+  it("POKEDEX lenght is 3", () => {
+    // Retorna el numero de luchadores
+    expect(Pokedex1.showPokedex()).to.eql(3);
+  })
 })
