@@ -15,7 +15,7 @@ import { DC } from "./DC";
 export abstract class Fighter {
   constructor(private readonly name: string, private readonly height: number,
               private readonly att: number, private readonly def: number, 
-              public hp: number, private readonly type: string) {
+              private readonly hp: number, private readonly type: string) {
   }
 
   getName(): string {

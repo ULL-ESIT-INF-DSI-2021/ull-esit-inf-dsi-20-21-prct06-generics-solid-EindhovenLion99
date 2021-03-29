@@ -9,12 +9,10 @@ export class Marvel extends Fighter {
   }
 
   efficiency<T extends (DC | Marvel | Pokemon)>(P2: T, damage: number): number {
-    if (this.getType() === "Avenger") {
-      if (P2.getType() === "DC")
-        return damage;
-      if (P2.getType() === "Avenger")
-        return damage; 
-    }
+    if (P2.getType() === "DC")
+      return damage;
+    if (P2.getType() === "Avenger")
+      return damage; 
     return damage * 2;
   }
 
