@@ -715,7 +715,7 @@ Generaria este arbol:
  ┗ 📜modules.html
  ```
 
-## Coveralls <a name="id4"></a>
+## Coveralls <a name="id5"></a>
 
 Para hacer el cubrimiento con coveralls, tuvimos que instalar un paquete llamado ```coveralls```, lo hicimos con el siguiente comando:
 
