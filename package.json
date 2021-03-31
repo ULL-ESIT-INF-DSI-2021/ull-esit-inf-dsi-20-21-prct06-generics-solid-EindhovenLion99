@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "tests": "mocha",
+    "test": "mocha",
     "doc": "typedoc",
-    "coverage": "nyc npm tests && nyc report --reporter=text-lcov | coveralls && rm -rf .nyc_output"
+    "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls && rm -rf .nyc_output"
   },
   "keywords": [],
   "author": "",
