@@ -713,3 +713,20 @@ Generaria este arbol:
  ┣ 📜index.html
  ┗ 📜modules.html
  ```
+
+## Coveralls <a name="id4"></a>
+
+Para hacer el cubrimiento con coveralls, tuvimos que instalar un paquete llamado ```coveralls```, lo hicimos con el siguiente comando:
+
+```bash
+npm install --save-dev nyc coveralls
+```
+
+Luego, iniciamos sesion en la pagina web, con nuestro usuario de github, añadimos nuestro repo a coveralls, este nos proporcionaba una clave, la cual introducimos en un archivo ```.coveralls.yml```.
+Una vez hecho esto ejecutamos el comando ```coverage```:
+
+```json
+"coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls && rm -rf .nyc_output"
+```
+
+COn este comando se nos subia el repo para hacer el cubrimiento, a fecha actual, el proyecto se ha subido, pero no ha finalizado el proceso. El badge del coverage sigue en ```unknown```.
