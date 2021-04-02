@@ -731,3 +731,7 @@ Una vez hecho esto ejecutamos el comando ```coverage```:
 ```
 
 COn este comando se nos subia el repo para hacer el cubrimiento, a fecha actual, el proyecto se ha subido, pero no ha finalizado el proceso. El badge del coverage sigue en ```unknown```.
+
+*Actualizacion (02/04)*
+
+Tras uno dias se ha realizado el cubrimiento del codigo, con un total de 70%. Lo podra ver en el README, donde se encuentra el badge del repo marcando 70.
